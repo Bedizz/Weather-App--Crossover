@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 
+
 const currentLocation = () => {
   const [catchingLocation, setcatchingLocation] = useState({});
   const [catchedLocationsWeather, setcatchedLocationsWeather] = useState({});
   const fetchingWeather = async () => {
     try {
       const res = await fetch(
+        
         `https://geo.ipify.org/api/v2/country,city?apiKey=${
           import.meta.env.VITE_APP_API_KEY
         }`
@@ -28,7 +30,9 @@ const currentLocation = () => {
       }
     } catch (error) {
       console.log("The GEO API couldnt fetch ", error);
-    }
+    } finally {
+        console.log("The GEO API and Weather API fetched successfully");
+        }
   };
 
   useEffect(() => {
