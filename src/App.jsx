@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <div className="bg-neutral-900 h-screen">
-        <WeatherDisplay />
         <SearchBar updateSearch={updateSearch} />
         <CurrentLocation /> 
       </div>
