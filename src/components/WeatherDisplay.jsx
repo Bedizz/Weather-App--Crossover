@@ -6,7 +6,7 @@ const WeatherDisplay = (props) => {
   const userLocation = props.location;
   const locationTemp = props.temp;
   const day = props.day;
-  console.log(day);
+  
 
   return (
     <div>

@@ -17,7 +17,7 @@ const currentLocation = () => {
       );
       const data = await res.json();
       setcatchingLocation(data);
-      console.log(data);
+      
 
       try {
         const CountryWeather = await fetch(
@@ -27,7 +27,7 @@ const currentLocation = () => {
         );
         const CountryWeatherData = await CountryWeather.json();
         setcatchedLocationsWeather(CountryWeatherData);
-        console.log(CountryWeatherData);
+        
       } catch (error) {
         console.log("The weather API couldnt fetch ", error);
       }
