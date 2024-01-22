@@ -46,16 +46,19 @@ const currentLocation = (props) => {
 
   // Added a display for when the page is loading and the async function has not completed
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="loadingDiv">
+    <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>;
   };
 
   // Creating variables from the fetched objects
   let userLocation = weatherData.location.name;
+  console.log(weatherData)
   let locationCurrentTemp = weatherData.current.temp_c;
 
   return (
     <div className='weatherDisplayText'>
-      <h1 className='currentLocationHeader'>Current Location: {userLocation} </h1>
+      <h1 className='currentLocationHeader'>Showing Location: {userLocation}, {weatherData.location.country} </h1>
 
       <div className='weatherCardContainer'>
         {/* Rendering the Component to display the weather, passing the fetched Location and Temperature as props */}

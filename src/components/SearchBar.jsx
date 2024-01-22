@@ -34,8 +34,8 @@ const SearchBar = (props) => {
   };
 
   return (
-    <>
-      <div className="w-full flex justify-center">
+    <>        
+      <div className="searchBar w-full flex-col justify-center items-center">
         <input
           type="text"
           className="bg-neutral-300 mt-20 p-2 w-4/5 sm:w-80 h-10 rounded focus:outline-none text-center"
@@ -43,6 +43,8 @@ const SearchBar = (props) => {
           onChange={handleChange}
           onKeyUp={handleKeyUp}
         />
+        <h3>Search a city to find out the weather!</h3>
+
       </div>
     </>
   );
