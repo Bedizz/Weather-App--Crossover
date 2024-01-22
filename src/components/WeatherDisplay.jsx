@@ -1,37 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
-const WeatherDisplay = () => {
+const WeatherDisplay = (props) => {
 
-    const [weather, setWeather] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const userLocation = "Cairo";
+    const weather = props.weather;
 
-    useEffect(() => {
-        const fetchForecast =  async () => {
-
-            try {
-                const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=296b9711a10f41e19c895608242201&q=${userLocation}&aqi=no`);
-                const weather = await response.json();
-
-                setWeather(weather);
-
-            } catch (error) {
-                console.log(error);
-            } finally {
-                setIsLoading(false);
-            };
-        };
-
-    fetchForecast();
-
-    }, [userLocation]);
+    const userLocation = props.location;
+    const locationTemp = props.temp;
+    const day = props.day;
+    console.log(day);
 
     
-    if (isLoading) return <div>Loading...</div>;
-
     return (
         <div>
-            <h1 className='displayText'>The temperature in {weather.location.name} today is {weather.current.temp_c}°C</h1>
+            <h1>Today is {props.day.date}</h1>
+            <h1>Today's weather is {day.day.condition.text}</h1>
+            <img src={day.day.condition.icon} alt="" />
+        
+            <h1>The temperature today is {locationTemp}°C</h1>
         </div>
     );
 

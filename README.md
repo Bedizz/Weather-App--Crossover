@@ -1,9 +1,12 @@
-# React + Vite
+# Weather App Crossover
+## A 1-day coding challenge crossover of 3 students in two separate bootcamp batches. 
+Authors 
+- Ciaran J
+- Bediz Türkyılmaz
+- Tonio Suessdorf
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Weather-App--Crossover
+Technologies:
+- JavaScript, React
+- Vite
+- REST API
+- Tailind CSS
