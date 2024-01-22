@@ -34,13 +34,8 @@ const currentLocation = () => {
     } catch (error) {
       console.log("The GEO API couldnt fetch ", error);
     } finally {
-<<<<<<< HEAD
-        console.log("The GEO API and Weather API fetched successfully");
-        }
-=======
-      setIsLoading(false); // Loading state is removed once async function is complete
-    };
->>>>>>> main
+      setIsLoading(false); // Setting the loading state to false when the async function has completed
+    }
   };
 
   useEffect(() => {
