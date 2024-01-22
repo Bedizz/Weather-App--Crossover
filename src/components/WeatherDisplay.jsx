@@ -10,37 +10,39 @@ const WeatherDisplay = (props) => {
   console.log(day);
 
   return (
-    <div className="weatherCard">
-      <h1>{props.day.date}</h1>
-      <img src={day.day.condition.icon} alt="" />
-      <h1>{day.day.condition.text}</h1>
+        
+        <div className="weatherCard">
 
-      <div className="tempDiv">
-        <div className="tableValueRow">
-            <p>Max:</p>
-            <p>{day.day.maxtemp_c}°C</p>
-        </div>
-        <div className="tableValueRow">
-            <p>Min:</p>
-            <p>{day.day.mintemp_c}°C</p>
-        </div>
-        <div className="tableValueRow">
-            <p>Avg:</p>
-            <p>{day.day.avgtemp_c}°C</p>
-        </div>
-    </div>
+            <h1>{props.day.date}</h1>
+            <img src={day.day.condition.icon} alt="weather icon" />
+            <h1>{day.day.condition.text}</h1>
 
-      <div className="rainDiv">
-        <div className="tableValueRow">
-            <p>Rain Chance : </p>
-            <p>{day.day.daily_chance_of_rain}</p>
+            <div className="tempDiv">
+                <div className="tableValueRow">
+                    <p>Max:</p>
+                    <p>{day.day.maxtemp_c}°C</p>
+                </div>
+                <div className="tableValueRow">
+                    <p>Min:</p>
+                    <p>{day.day.mintemp_c}°C</p>
+                </div>
+                <div className="tableValueRow">
+                    <p>Avg:</p>
+                    <p>{day.day.avgtemp_c}°C</p>
+                </div>
+            </div>
+
+            <div className="rainDiv">
+                <div className="tableValueRow">
+                    <p>Rain Chance : </p>
+                    <p>{day.day.daily_chance_of_rain}</p>
+                </div>
+                <div className="tableValueRow">
+                    <p>Rain Chance : </p>
+                    <p>{day.day.daily_chance_of_snow}</p>
+                </div>
+            </div>
         </div>
-        <div className="tableValueRow">
-            <p>Rain Chance : </p>
-            <p>{day.day.daily_chance_of_snow}</p>
-        </div>
-      </div>
-    </div>
   );
 };
 

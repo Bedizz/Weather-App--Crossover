@@ -1,36 +1,51 @@
 * { 
-    color: black;
+    color: white;
 }
 
 .weatherCardContainer {
     display: flex;
-    border: 2px solid orange;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 3rem 6rem;
 }
 
 .weatherCard {
-    background-color: rgb(231, 231, 231);
+    transition: 0.5s;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid red;
     width: 300px;
-    height: 500px;
+    height: 450px;
     padding: 1.2rem;
+    border-radius: 16px;
+    background-color: #1f2937;
+    border: 2px solid #1f2937;
+
 }
 
-.weatherCard img {
-    width: 100px;
-    height: 100px;
+.weatherCard:hover {
+    border: 2px solid #a6a9ae;
+    transform: scale(1.04);
+    transition: 0.8s;
 }
 
 .tempDiv, .rainDiv {
-    border: 2px solid green;
     width: 80%;
+    background-color: #373e4a;
+    border-radius: 4px;
 }
 
 .tableValueRow {
     display: flex;
     justify-content: space-between;
+    padding: 0.4rem 0.4rem;
+}
+
+.tableValueRow:hover {
+    background-color: #a6a9ae;
+    color: #373e4a;
+    border-radius: 4px;
+}
+.tableValueRow:hover p {
+    color: #373e4a; 
 }
