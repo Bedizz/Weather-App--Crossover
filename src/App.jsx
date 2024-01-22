@@ -4,8 +4,9 @@ import SearchBar from "./components/SearchBar";
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <SearchBar />
+      <div className="bg-neutral-900 h-screen">
+        <SearchBar />
+      </div>
     </>
   );
 }
