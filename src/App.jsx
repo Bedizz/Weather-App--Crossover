@@ -10,11 +10,10 @@ function App() {
 
   return (
     <>
-      <div className="bg-neutral-900 h-screen">
+      <div className="bg-neutral-900 min-h-screen">
         <SearchBar updateSearch={updateSearch} />
-        <CurrentLocation /> 
+        <CurrentLocation />
       </div>
-
     </>
   );
 }
