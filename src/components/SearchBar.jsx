@@ -38,7 +38,7 @@ const SearchBar = (props) => {
         <input
           aria-label="search bar"
           type="text"
-          className="bg-neutral-300 mt-20 p-2 w-4/5 sm:w-80 h-10 rounded focus:outline-none text-center"
+          className="bg-neutral-300 placeholder:text-neutral-600 mt-20 p-2 w-4/5 sm:w-80 h-10 rounded focus:outline-none text-center"
           placeholder="Search..."
           onChange={handleChange}
           onKeyUp={handleKeyUp}
