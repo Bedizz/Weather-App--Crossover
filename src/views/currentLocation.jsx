@@ -55,7 +55,10 @@ const currentLocation = () => {
       <h1>Current Location: {userLocation} </h1>
 
       {/* Rendering the Component to display the weather, passing the fetched Location and Temperature as props */}
-      <WeatherDisplay location={userLocation} temp={locationCurrentTemp} />
+      {catchedLocationsWeather.forecast.forecastday.map((day) => (
+              <WeatherDisplay location={userLocation} temp={locationCurrentTemp} key={day.date} day={day}/>
+
+        ))}
     </div>
   );
 };
