@@ -36,9 +36,11 @@ const SearchBar = (props) => {
   return (
     <>        
       <div className="searchBar w-full flex-col justify-center items-center">
+
+        <h1>Welcome to the Weather App! 🌤️</h1>
         <input
           type="text"
-          className="bg-neutral-300 mt-20 p-2 w-4/5 sm:w-80 h-10 rounded focus:outline-none text-center"
+          className="bg-neutral-300 mt-5 p-2 w-4/5 sm:w-80 h-10 rounded focus:outline-none text-center"
           placeholder="Search..."
           onChange={handleChange}
           onKeyUp={handleKeyUp}

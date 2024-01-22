@@ -16,10 +16,18 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    background-color: #797e86;
+}
+
+.searchBar h1 {
+    color: #171d26;
+    font-size: 2rem;
+    padding-top: 2rem;
 }
 
 .searchBar h3 {
     padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 .loadingDiv {

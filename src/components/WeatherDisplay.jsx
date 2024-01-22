@@ -35,12 +35,9 @@ const WeatherDisplay = (props) => {
             <div className="rainDiv">
                 <div className="tableValueRow">
                     <p>Rain Chance : </p>
-                    <p>{day.day.daily_chance_of_rain}</p>
+                    <p>{day.day.daily_chance_of_rain}%</p>
                 </div>
-                <div className="tableValueRow">
-                    <p>Rain Chance : </p>
-                    <p>{day.day.daily_chance_of_snow}</p>
-                </div>
+
             </div>
         </div>
   );
