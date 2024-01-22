@@ -2,7 +2,11 @@ import React from "react";
 
 const SearchBar = (props) => {
   const handleInput = (e) => {
-    props.updateSearch(e.target.value);
+    debug.log("handleChange");
+    if (e.key === "Enter") {
+      debug.log("Enter pressed.");
+      props.updateSearch(e.target.value);
+    }
   };
 
   return (
