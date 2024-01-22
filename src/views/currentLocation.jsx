@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import WeatherDisplay from "../components/WeatherDisplay";
 
+
 const currentLocation = () => {
   const [catchingLocation, setcatchingLocation] = useState({});
   const [catchedLocationsWeather, setcatchedLocationsWeather] = useState({});
@@ -9,6 +10,7 @@ const currentLocation = () => {
   const fetchingWeather = async () => {
     try {
       const res = await fetch(
+        
         `https://geo.ipify.org/api/v2/country,city?apiKey=${
           import.meta.env.VITE_APP_API_KEY
         }`
@@ -32,8 +34,8 @@ const currentLocation = () => {
     } catch (error) {
       console.log("The GEO API couldnt fetch ", error);
     } finally {
-      setIsLoading(false); // Loading state is removed once async function is complete
-    };
+      setIsLoading(false); // Setting the loading state to false when the async function has completed
+    }
   };
 
   useEffect(() => {
