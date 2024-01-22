@@ -4,16 +4,14 @@ import WeatherDisplay from "./components/WeatherDisplay";
 import CurrentLocation from "./views/currentLocation";
 
 function App() {
-  const updateSearch = (searchInput) => {
-    console.log(searchInput);
-  };
+  const [searchResults, setSearchResults] = useState(null);
 
   return (
     <>
       <div className="bg-neutral-900 min-h-screen">
-        <SearchBar updateSearch={updateSearch} />
-        <CurrentLocation />
-      </div>
+        <SearchBar updateSearch={setSearchResults} />
+        {searchResults && <CurrentLocation weatherData={searchResults} />}      
+        </div>
     </>
   );
 }

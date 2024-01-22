@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import WeatherDisplay from "../components/WeatherDisplay";
 
 
-const currentLocation = () => {
+const currentLocation = (props) => {
   const [catchingLocation, setcatchingLocation] = useState({});
-  const [catchedLocationsWeather, setcatchedLocationsWeather] = useState({});
   const [isLoading, setIsLoading] = useState(true); // Setting a loading state to await results of async function
-
+  const weatherData = props.weatherData
   const fetchingWeather = async () => {
     try {
       const res = await fetch(
@@ -38,10 +37,10 @@ const currentLocation = () => {
     }
   };
 
+  console.log(weatherData);
+
   useEffect(() => {
     fetchingWeather();
-
-    
   }, []);
 
 
@@ -51,8 +50,8 @@ const currentLocation = () => {
   };
 
   // Creating variables from the fetched objects
-  let userLocation = catchingLocation.location.city;
-  let locationCurrentTemp = catchedLocationsWeather.current.temp_c;
+  let userLocation = weatherData.location.name;
+  let locationCurrentTemp = weatherData.current.temp_c;
 
   return (
     <div className='weatherDisplayText'>
@@ -60,7 +59,7 @@ const currentLocation = () => {
 
       <div className='weatherCardContainer'>
         {/* Rendering the Component to display the weather, passing the fetched Location and Temperature as props */}
-        {catchedLocationsWeather.forecast.forecastday.map((day) => (
+        {weatherData.forecast.forecastday.map((day) => (
                 <WeatherDisplay location={userLocation} temp={locationCurrentTemp} key={day.date} day={day}/>
 
           ))}
