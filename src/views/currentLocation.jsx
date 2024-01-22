@@ -54,7 +54,7 @@ const currentLocation = () => {
 
   return (
     <div className='weatherDisplayText'>
-      <h1>Current Location: {userLocation} </h1>
+      <h1 className='currentLocationHeader'>Current Location: {userLocation} </h1>
 
       <div className='weatherCardContainer'>
         {/* Rendering the Component to display the weather, passing the fetched Location and Temperature as props */}
