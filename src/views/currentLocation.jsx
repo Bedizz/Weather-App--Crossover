@@ -40,6 +40,8 @@ const currentLocation = () => {
 
   useEffect(() => {
     fetchingWeather();
+
+    
   }, []);
 
 
