@@ -14,6 +14,7 @@ const SearchBar = (props) => {
         }&q=${searchText}&days=4&aqi=yes&alerts=no`
       );
       const data = await result.json();
+      props.updateSearch(data);
       setWeather(data);
       console.log(data);
     } catch (error) {
@@ -43,29 +44,6 @@ const SearchBar = (props) => {
           onChange={handleChange}
           onKeyUp={handleKeyUp}
         />
-      </div>
-      <div>
-        {weather.current && (
-          <div className="weather-container">
-            {weather.forecast.forecastday.map((day) => (
-              <div className="weather-card" key={day.date}>
-                <h2 className="date"> {day.date}</h2>
-                <img
-                  src={day.day.condition.icon}
-                  alt={day.day.condition.text}
-                />
-                <hr />
-                <p className="condition">{day.day.condition.text}</p>
-                <div className="weather">
-                  <hr />
-                  <p>Max: {day.day.maxtemp_c}°C</p>
-                  <p>Min: {day.day.mintemp_c}°C</p>
-                  <p>Avg: {day.day.avgtemp_c}°C</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
     </>
   );
