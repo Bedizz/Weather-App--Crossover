@@ -12,6 +12,7 @@ function App() {
         <SearchBar updateSearch={setSearchResults} />
         {searchResults && <CurrentLocation weatherData={searchResults} />}      
         </div>
+
     </>
   );
 }

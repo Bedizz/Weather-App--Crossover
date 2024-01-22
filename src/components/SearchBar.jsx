@@ -39,8 +39,9 @@ const SearchBar = (props) => {
 
         <h1>Welcome to the Weather App! 🌤️</h1>
         <input
+          aria-label="search bar"
           type="text"
-          className="bg-neutral-300 mt-5 p-2 w-4/5 sm:w-80 h-10 rounded focus:outline-none text-center"
+          className="bg-neutral-300 placeholder:text-neutral-600 mt-5 p-2 w-4/5 sm:w-80 h-10 rounded focus:outline-none text-center"
           placeholder="Search..."
           onChange={handleChange}
           onKeyUp={handleKeyUp}
