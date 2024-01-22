@@ -23,7 +23,7 @@ const currentLocation = () => {
         const CountryWeather = await fetch(
           `http://api.weatherapi.com/v1/forecast.json?key=${
             import.meta.env.VITE_WEATHER_API
-          }&q=${data.location.city}&days=3&aqi=yes&alerts=no`
+          }&q=${data.ip}&days=3&aqi=yes&alerts=no`
         );
         const CountryWeatherData = await CountryWeather.json();
         setcatchedLocationsWeather(CountryWeatherData);
@@ -56,11 +56,13 @@ const currentLocation = () => {
     <div className='weatherDisplayText'>
       <h1>Current Location: {userLocation} </h1>
 
-      {/* Rendering the Component to display the weather, passing the fetched Location and Temperature as props */}
-      {catchedLocationsWeather.forecast.forecastday.map((day) => (
-              <WeatherDisplay location={userLocation} temp={locationCurrentTemp} key={day.date} day={day}/>
+      <div className='weatherCardContainer'>
+        {/* Rendering the Component to display the weather, passing the fetched Location and Temperature as props */}
+        {catchedLocationsWeather.forecast.forecastday.map((day) => (
+                <WeatherDisplay location={userLocation} temp={locationCurrentTemp} key={day.date} day={day}/>
 
-        ))}
+          ))}
+      </div>
     </div>
   );
 };
