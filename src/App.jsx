@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
+import WeatherDisplay from "./components/WeatherDisplay";
 import CurrentLocation from "./views/currentLocation";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
       <div className="bg-neutral-900 h-screen">
+        <WeatherDisplay />
         <SearchBar updateSearch={updateSearch} />
         <CurrentLocation /> 
       </div>
