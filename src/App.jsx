@@ -1,13 +1,19 @@
-
-import "./App.css";
+import { useState } from "react";
+import SearchBar from "./components/SearchBar";
 import CurrentLocation from "./views/currentLocation";
 
 function App() {
+  const updateSearch = (searchInput) => {
+    console.log(searchInput);
+  };
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <CurrentLocation /> 
+      <div className="bg-neutral-900 h-screen">
+        <SearchBar updateSearch={updateSearch} />
+        <CurrentLocation /> 
+      </div>
+
     </>
   );
 }
